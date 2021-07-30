@@ -10,5 +10,6 @@ The files are mentioned as follows:
 - Views_Texts_Styles
 
 ```sh
-These files are basically a part of `App.js` file. So whenever you want these files to execute, you have to copy and paste it to a `App.js` file.
+These files are basically a part of `App.js` file. So whenever you want these files to execute, 
+you have to copy and paste it to a `App.js` file.
 ```
