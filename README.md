@@ -4,7 +4,7 @@
 
 You will be asked to create an Expo account before proceeding. For detail information, visit this site
 
-[https://docs.expo.io/][doep]
+[https://docs.expo.io/]
 
 - Open terminal and type, `expo init myproject`
 - choose `blank workflow`
