@@ -1,0 +1,58 @@
+import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+
+export default function App() {
+
+  const [name, setName] = useState('Talbia Kabir');
+  const [age, setAge] = useState('25');
+
+  return (
+    <View style = {styles.container}>
+
+      {/* Input field for NAME */}
+      <Text>Enter name:</Text>
+      <TextInput 
+      multiline 
+      // type more than one line
+      style = {styles.input}
+      placeholder = 'name' 
+      onChangeText = {(val) => setName(val) }/>
+      {/* This will automatically update while typing name */}
+
+      {/* Input field for AGE */}
+      <Text>Enter age:</Text>
+      <TextInput 
+      keyboardType = 'numeric' 
+      // this option will display numeric keyboard
+      style = {styles.input}
+      placeholder = 'age' 
+      onChangeText = {(val) => setAge(val) }/>
+      {/* This will automatically update while typing age */}
+
+      <Text> name: {name}, age: {age}</Text>
+    </View>
+    
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+  },
+  
+  input: {
+    borderWidth: 1,
+    borderColor: '#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
+  }
+    
+  
+
+});

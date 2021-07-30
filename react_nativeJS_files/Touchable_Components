@@ -1,0 +1,75 @@
+import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
+
+export default function App() {
+
+  const [people, setPeople] = useState([
+  // Listing
+    {name: 'John', key: '1'},
+    {name: 'Isack', key: '2'},
+    {name: 'Jason', key: '3'},
+    {name: 'Michael', key: '4'},
+    {name: 'Noah', key: '5'},
+    {name: 'Siri', key: '6'},
+    {name: 'Amy', key: '7'},
+    {name: 'James', key: '8'},
+
+  ]);
+
+  const pressHandler = (key) => {
+    console.log(key);
+    // this will remove the key once pressed 
+    setPeople((prevPeople) => {
+      return prevPeople.filter(person => person.key != key)
+    })
+  }
+  
+  return (
+    <View style = {styles.container}>
+      
+      <FlatList 
+      numColumns = {2}
+      keyExtractor = {(item) => item.key}
+      data = {people}
+      renderItem = {({item}) => (
+
+        //TouchableOpacity, pressHandler are events when cursor will hover over a key
+        <TouchableOpacity onPress = {() => pressHandler(item.key)}>
+        <Text style = {styles.item} > {item.name}</Text>  
+        </TouchableOpacity>
+
+      )}
+      />
+
+      
+
+    </View>
+    
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    
+  
+  },
+  
+   item: {
+     padding: 25,
+     backgroundColor: 'pink',
+     fontSize: 20,
+     marginHorizontal: 15,
+     marginTop: 30,
+   }
+    
+   
+  
+
+});

@@ -1,0 +1,53 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+
+  const [name, setName] = useState('Talbia Kabir');
+  const [person, setPerson] = useState({name: 'Talbo', age: 25});
+
+  const clickHandler = () => {
+    setName('Chowdhury');
+    setPerson({name: 'TalboO', age: 26}); // replace the name with TalboO
+  }
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+      <Text style={styles.boldText}>Hello, World!</Text>
+      </View>
+      <View style={styles.body}>
+      <Text>Lorem Ipsum</Text>
+      </View>
+    </View>
+    
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+  },
+  
+  header: {
+    backgroundColor: 'pink',
+    padding: 15,
+    marginTop: 15,
+    
+  },
+  boldText: {
+    fontWeight: 'bold',
+  },
+  body: {
+    backgroundColor: 'yellow',
+    padding: 15,
+    marginTop: 15,
+    
+  }
+
+});
