@@ -6,6 +6,8 @@ You will be asked to create an Expo account before proceeding. For detail inform
 
 [https://docs.expo.io/]
 
+#### For a project creation
+
 - Open terminal and type, `expo init myproject`
 - choose `blank workflow`
 - `cd myproject` to go the project directory
